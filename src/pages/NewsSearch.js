@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 import Header from '../component/Header'
 import SearchInput from '../component/NewsSearch/SearchInput'
+import NewsList from '../component/NewsSearch/NewsList'
 import axios from "axios";
 
 const NewsSearch = () => {
     const [searchText, setSearchText] = useState();
-    const [searchResult, setSearchResult] = useState();    
+    const [searchResult, setSearchResult] = useState([]);    
     // 데이터와 검색어가 계속 바뀐다. 
     // useState로 동적 변경
     // searchTest : 검색어 저장
@@ -26,7 +27,10 @@ const NewsSearch = () => {
             `https://newsapi.org/v2/everything?q=${searchText}&from=2021-08-01&sortBy=publishedAt&apiKey=78bc6ddd8cdb48ceac76f5f9b9dfc4c5&language=ko`
         )
         .then((response) => {
-        console.log(response.data.articles); 
+            console.log(response.data.articles); 
+            // data 받아옴
+            setSearchResult(response.data.articles);
+            // 결과값 변경
         });
     };
 
@@ -37,6 +41,7 @@ const NewsSearch = () => {
                 handleInput={handleSearchTextChange}
                 handleClick={handleSearchButtonClick}
             ></SearchInput>
+            <NewsList searchResult={searchResult}></NewsList>
         </div>
     );
     // 헤더 생성 "뉴스 검색" Header
