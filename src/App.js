@@ -3,6 +3,8 @@ import './App.css';
 import NewsSearch from './pages/NewsSearch';
 import AxiosTest from "./pages/AxiosTest";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import AddUser from './pages/AddUser';
+import AuthResult from './pages/AuthResult';
 
 function App() {
   return (
@@ -13,8 +15,13 @@ function App() {
         </Router>
         <Router path="/news" exact>
           <NewsSearch></NewsSearch>
-        </Router>         
-         
+        </Router>
+        <Router path="/adduser" exact>
+          <AddUser></AddUser>
+        </Router>
+        <Router path="/authResult" exact>
+          <AuthResult></AuthResult>
+        </Router>   
       </Switch>
     </Router>
   );
