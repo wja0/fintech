@@ -8,7 +8,7 @@ const NewsListBlock = styled.div`
     margin-bottom: 10px;
     padding: 10px;
 `;
-// 스타일 디자인
+// 스타일 디자인 컴포넌트로 사용가능
 
 const NewsListItem = ({title, url}) => {
     return (
