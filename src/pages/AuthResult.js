@@ -72,6 +72,7 @@ const AuthResult = () => {
     )
     // accessToken 배열 화면에 출력
 }
+// 새로고침하면 안나옴. 토큰 재사용 방지용.
 
 export default AuthResult
 // 1) 오픈뱅킹 인증 사이트에서 code 받기
