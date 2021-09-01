@@ -21,9 +21,13 @@ const AuthResult = () => {
     // keyword 출력결과: "리액트"
     // 여기선 code 값을 가져옴
 
-// code에 AccessToken이 저장된다!!!
+// <결론> code에 AccessToken이 저장된다!!!
+
+    const [accessToken, setAcceccToken] = useState("토큰 받아오기 전");
+    // accessToken 눈으로 확인
 
     useEffect(()=>{
+        // useEffect : 해당 컴포넌트가 그려질 때 제일 먼저 실행되는 function
         getAccessToken();
     }, []);
 
